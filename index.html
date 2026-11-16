@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - [Tên của bạn]</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to Main Content</a>
+
+  <header class="site-header">
+    <nav aria-label="Điều hướng chính">
+      <ul class="nav-list">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <h1>[Tên của bạn]</h1>
+    <p class="tagline">Sinh viên ngành [ngành học] - làm web và thiết kế giao diện</p>
+  </header>
+
+  <main id="main">
+    <section id="about" class="card">
+      <h2>Giới thiệu</h2>
+      <p>Mình là sinh viên đang học lập trình web. Trang này giới thiệu các dự án mình đã làm, từ bài tập HTML/CSS đến ứng dụng có JavaScript.</p>
+      <p>Mình thích làm giao diện rõ ràng, dễ dùng cả bằng bàn phím và trên điện thoại.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Dự án</h2>
+
+      <div class="filters" role="group" aria-label="Lọc dự án">
+        <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">Tất cả</button>
+        <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" class="filter-btn" data-filter="design" aria-pressed="false">Thiết kế</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project" data-category="web">
+          <img src="images/project1.jpg" alt="Ảnh minh họa dự án Photo Gallery, năm thành viên đội tuyển trước phông nền">
+          <h3>Photo Gallery tương tác</h3>
+          <p>Thư viện ảnh dùng JavaScript: rê chuột hoặc Tab vào ảnh để xem ảnh lớn.</p>
+        </article>
+
+        <article class="project" data-category="design">
+          <img src="images/project2.jpg" alt="Ảnh minh họa dự án Trang gallery responsive, đội tuyển trên nền tối">
+          <h3>Trang gallery responsive</h3>
+          <p>Bố cục một cột trên điện thoại, hai cột trên máy tính bảng, ba cột trên màn hình lớn.</p>
+        </article>
+
+        <article class="project" data-category="web">
+          <img src="images/project3.jpg" alt="Ảnh minh họa dự án Trang giới thiệu, đội tuyển ngồi trên ghế">
+          <h3>Trang giới thiệu có điều hướng</h3>
+          <p>Điều hướng bằng flexbox, hiệu ứng hover và trang giới thiệu có ảnh.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Liên hệ</h2>
+      <p>Email: <a href="mailto:ban@example.com">ban@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/">github.com/[tên-github]</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Trang web làm bởi [Tên của bạn]. <a href="#top-link" class="back-top" id="top-link">Lên đầu trang</a></p>
+  </footer>
+</body>
+</html>

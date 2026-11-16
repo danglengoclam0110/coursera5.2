@@ -1,0 +1,244 @@
+/* ===== Biến màu (light mặc định) ===== */
+:root {
+  --bg: #f7f5f0;
+  --text: #222222;
+  --card-bg: #ffffff;
+  --accent: #2e4a3f;
+  --accent-text: #ffffff;
+  --border: #2e4a3f;
+  --focus: #b35c00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== Extra 1: skip link, chỉ hiện khi focus ===== */
+.skip-link {
+  position: absolute;
+  left: 10px;
+  top: -60px;
+  background: #ffffff;
+  color: #000000;
+  padding: 8px 12px;
+  border: 2px solid #000000;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Viền focus rõ cho mọi phần tử bấm được */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ===== Header và điều hướng ===== */
+.site-header {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 8px 0 4px;
+  font-family: Georgia, serif;
+}
+
+.tagline {
+  margin: 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: inline-block;
+  color: var(--accent-text);
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #f4a261;
+  color: #1b1b1b;
+}
+
+/* ===== Nội dung chính ===== */
+main {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  color: var(--accent);
+}
+
+/* ===== Extra 2: bộ lọc dự án ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f4a261;
+}
+
+.filter-btn.is-active {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ===== Lưới dự án: mobile 1 cột (mặc định) ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.project {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.project h3 {
+  margin: 12px 0 6px;
+  color: var(--accent);
+}
+
+.project[hidden] {
+  display: none;
+}
+
+/* ===== Responsive: tablet 2 cột, màn hình lớn 3 cột ===== */
+@media (min-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  padding: 14px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--accent-text);
+}
+
+/* ===== Extra 3: chế độ tối theo cài đặt máy ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #eeeeee;
+    --card-bg: #1e1e1e;
+    --accent: #1b3a2f;
+    --border: #000000;
+    --focus: #ffd166;
+  }
+
+  h2,
+  .project h3 {
+    color: #ffef8a;
+  }
+
+  .filter-btn {
+    color: #eeeeee;
+  }
+
+  .filter-btn.is-active {
+    color: #ffffff;
+  }
+}
+
+/* ===== Extra 4: tắt chuyển động khi người dùng bật giảm chuyển động ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
